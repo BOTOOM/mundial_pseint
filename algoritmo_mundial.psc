@@ -43,16 +43,16 @@ Algoritmo mundial
 		puntaje[i]<-0;
 	Fin Para
 	
-	Para i<-0 Hasta 7 Con Paso 1 Hacer //asigna los equipos a los grupos
-		Para j<-0 Hasta 3 Con Paso 1 Hacer
+	Para j<-0 Hasta 3 Con Paso 1 Hacer //asigna los equipos a los grupos
+		Para i<-0 Hasta 7 Con Paso 1 Hacer
 			grupos[j,i]<-equipos[cont];
 			//Escribir cont,"contador--",j,"-",i;
 			cont<-cont+1;
 		Fin Para
 	Fin Para
 	
-	Para i<-0 Hasta 7 Con Paso 1 Hacer //asigna puntaje para la ronda de grupos
-		Para j<-0 Hasta 3 Con Paso 1 Hacer
+	Para j<-0 Hasta 3 Con Paso 1 Hacer //asigna puntaje para la ronda de grupos
+		Para i<-0 Hasta 7 Con Paso 1 Hacer
 			puntGrupos[j,i]<-0;
 		Fin Para
 	Fin Para
@@ -61,7 +61,7 @@ Algoritmo mundial
 	Escribir "			";
 	Escribir "acontinuacion se le dara la opcion de agregar los puntajes a los encuentros, se le dara la opcion de dejar de colocar puntajes,esto implica que todos los puntajes no colocados seran aleatoreos";
 	Escribir "			"; //escger esta opcion hace que se salte el colocar puntaje en la ronda de grupos, todo sera aleatoreo
-	Escribir "se aclara que solo van a haber 2 encuentros por la ronda de grupos, en total se jugaran 16 partidos en la ronda de grupos"
+	Escribir "se aclara que solo van a haber 2 encuentros por la ronda de grupos, en total se jugaran 16 partidos en la ronda de grupos, al final el equipo con mas goles entre los 4 sera el que clasifique"
 	Escribir "			";
 	Escribir "SE INICIA LA RONDA DE GRUPOS";
 	Escribir "			";
@@ -75,7 +75,7 @@ Algoritmo mundial
 			Escribir "Encuentro entre ",grupos[j,i]," y ",grupos[j,i+1];
 			
 			Si op=1 Entonces
-				Escribir "desea asignar puntuacion?"
+				Escribir "desea asignar puntuacion? 1=si , otro valor = no"
 				Leer op;
 			SiNo
 				Escribir "resultados aleatoreos"
@@ -83,15 +83,41 @@ Algoritmo mundial
 			Si op=1 Entonces
 				Escribir "Digite numero de goles para ",grupos[j,i];
 				Leer puntGrupos[j,i];
+				puntaje[cont]<-puntGrupos[j,i];
+				cont<-cont+1;
 				Escribir "Digite numero de goles para ",grupos[j,i+1];
 				Leer puntGrupos[j,i+1];
+				puntaje[cont]<-puntGrupos[j,i+1]
+				cont<-cont+1;
 			SiNo
 				Escribir "resultados aleatoreos"
 				puntGrupos[j,i]<-azar(10);
+				puntaje[cont]<-puntGrupos[j,i]
+				cont<-cont+1;
+				Escribir "puntaje para ",grupos[j,i]," = ",puntGrupos[j,i];
 				puntGrupos[j,i+1]<-azar(10);
+				puntaje[cont]<-puntGrupos[j,i+1]
+				cont<-cont+1;
+				Escribir "puntaje para ",grupos[j,i+1]," = ",puntGrupos[j,i+1];
 			Fin Si
 			
 		Fin Para
 	Fin Para
+	Escribir "			";
+	Escribir "los clasificados son";
+	Escribir "			";
+	
+	Para i<-0 Hasta 31 Con Paso 1 Hacer //asigna puntaje inicial para todos los equipos
+		Escribir puntaje[i];
+	Fin Para
+	
+//	
+//	/**Para j<-0 Hasta 3 Con Paso 1 Hacer
+//		Si () Entonces
+//			acciones_por_verdadero
+//		SiNo
+//			acciones_por_falso
+//		Fin Si
+//	Fin Para*
 	
 FinAlgoritmo
