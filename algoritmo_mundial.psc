@@ -66,11 +66,31 @@ Algoritmo mundial
 	Escribir "SE INICIA LA RONDA DE GRUPOS";
 	Escribir "			";
 	cont<-0;
+	op<-1;
 	Para j<-0 Hasta 3 Con Paso 1 Hacer
 		Para i<-0 Hasta 7 Con Paso 2 Hacer
 			//Escribir cont,"contador--",j,"-",i;
 			//Escribir cont,"contador--",j,"-",i+1;
 			//cont<-cont+1;
+			Escribir "Encuentro entre ",grupos[j,i]," y ",grupos[j,i+1];
+			
+			Si op=1 Entonces
+				Escribir "desea asignar puntuacion?"
+				Leer op;
+			SiNo
+				Escribir "resultados aleatoreos"
+			Fin Si
+			Si op=1 Entonces
+				Escribir "Digite numero de goles para ",grupos[j,i];
+				Leer puntGrupos[j,i];
+				Escribir "Digite numero de goles para ",grupos[j,i+1];
+				Leer puntGrupos[j,i+1];
+			SiNo
+				Escribir "resultados aleatoreos"
+				puntGrupos[j,i]<-azar(10);
+				puntGrupos[j,i+1]<-azar(10);
+			Fin Si
+			
 		Fin Para
 	Fin Para
 	
