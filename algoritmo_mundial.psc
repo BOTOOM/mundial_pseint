@@ -39,11 +39,11 @@ Algoritmo mundial
 	equipos[31]="japon";
 	cont<-0;
 	
-	Para i<-0 Hasta 31 Con Paso 1 Hacer
+	Para i<-0 Hasta 31 Con Paso 1 Hacer //asigna puntaje inicial para todos los equipos
 		puntaje[i]<-0;
 	Fin Para
 	
-	Para i<-0 Hasta 7 Con Paso 1 Hacer
+	Para i<-0 Hasta 7 Con Paso 1 Hacer //asigna los equipos a los grupos
 		Para j<-0 Hasta 3 Con Paso 1 Hacer
 			grupos[j,i]<-equipos[cont];
 			//Escribir cont,"contador--",j,"-",i;
@@ -51,13 +51,27 @@ Algoritmo mundial
 		Fin Para
 	Fin Para
 	
-	Para i<-0 Hasta 7 Con Paso 1 Hacer
+	Para i<-0 Hasta 7 Con Paso 1 Hacer //asigna puntaje para la ronda de grupos
 		Para j<-0 Hasta 3 Con Paso 1 Hacer
 			puntGrupos[j,i]<-0;
 		Fin Para
 	Fin Para
 	
 	Escribir "todos los equipos han sido asignados a sus grupos";
-	
+	Escribir "			";
+	Escribir "acontinuacion se le dara la opcion de agregar los puntajes a los encuentros, se le dara la opcion de dejar de colocar puntajes,esto implica que todos los puntajes no colocados seran aleatoreos";
+	Escribir "			"; //escger esta opcion hace que se salte el colocar puntaje en la ronda de grupos, todo sera aleatoreo
+	Escribir "se aclara que solo van a haber 2 encuentros por la ronda de grupos, en total se jugaran 16 partidos en la ronda de grupos"
+	Escribir "			";
+	Escribir "SE INICIA LA RONDA DE GRUPOS";
+	Escribir "			";
+	cont<-0;
+	Para j<-0 Hasta 3 Con Paso 1 Hacer
+		Para i<-0 Hasta 7 Con Paso 2 Hacer
+			//Escribir cont,"contador--",j,"-",i;
+			//Escribir cont,"contador--",j,"-",i+1;
+			//cont<-cont+1;
+		Fin Para
+	Fin Para
 	
 FinAlgoritmo
