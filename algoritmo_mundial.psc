@@ -36,5 +36,18 @@ Algoritmo mundial
 	equipos[29]="senegal";
 	equipos[30]="colombia";
 	equipos[31]="japon";
+	cont<-0;
+	
+	Para i<-0 Hasta 31 Con Paso 1 Hacer
+		puntaje[i]<-0;
+	Fin Para
+	
+	Para i<-0 Hasta 3 Con Paso 1 Hacer
+		Para j<-0 Hasta 7 Con Paso 1 Hacer
+			
+			Escribir cont,"contador";
+			cont<-cont+1;
+		Fin Para
+	Fin Para
 	
 FinAlgoritmo
