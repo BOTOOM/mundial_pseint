@@ -2,7 +2,8 @@ Algoritmo mundial
 	
 	Dimension equipos[32];
 	Dimension puntaje[32];
-	Dimension grupos[8,4];
+	Dimension grupos[4,8];
+	Dimension puntGrupos[4,8];
 	
 	equipos[0]="rusia";
 	equipos[1]="arabia";
@@ -42,12 +43,21 @@ Algoritmo mundial
 		puntaje[i]<-0;
 	Fin Para
 	
-	Para i<-0 Hasta 3 Con Paso 1 Hacer
-		Para j<-0 Hasta 7 Con Paso 1 Hacer
-			
-			Escribir cont,"contador";
+	Para i<-0 Hasta 7 Con Paso 1 Hacer
+		Para j<-0 Hasta 3 Con Paso 1 Hacer
+			grupos[j,i]<-equipos[cont];
+			//Escribir cont,"contador--",j,"-",i;
 			cont<-cont+1;
 		Fin Para
 	Fin Para
+	
+	Para i<-0 Hasta 7 Con Paso 1 Hacer
+		Para j<-0 Hasta 3 Con Paso 1 Hacer
+			puntGrupos[j,i]<-0;
+		Fin Para
+	Fin Para
+	
+	Escribir "todos los equipos han sido asignados a sus grupos";
+	
 	
 FinAlgoritmo
